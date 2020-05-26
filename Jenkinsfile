@@ -6,5 +6,10 @@
                           echo 'Hello World'
                      }
                 }
+                stage("jenkins") {
+                     steps {
+                          sh 'ls'
+                      }
+                }
            }
       }

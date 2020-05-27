@@ -1,8 +1,8 @@
 node {
-    stage{
+    stage('parameter') {
         echo "building new parameter"
     }
-    stage{
+    stage('hello world') {
         sh 'hello world'
     }
 }

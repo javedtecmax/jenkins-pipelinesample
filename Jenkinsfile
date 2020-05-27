@@ -18,9 +18,9 @@
                      }
                 }
                  
-                stage("Call parameter job") {
+                stage("call jenkins-parameterized") {
                      steps {
-                           build job: 'jenkins-parameterized', parameters: [[$class: 'StringParameterValue', name: 'test_var', value: javeed]]
+                           build job: 'jenkins-parameterized', parameters: [[$class: 'StringParameterValue', name: 'test_var', value: 'javeed' ]]
                      }
                 }
                  

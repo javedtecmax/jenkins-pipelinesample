@@ -6,7 +6,8 @@ node {
         sh 'echo hello world'
     }
     stage('adding parameter') {
-        build job: 'centos-parameter', parameters: [[$class: 'Stringparametervalue', name: 'centos_variable', value: "hi good evening"]]
+                build job: 'centos-parameter', parameters: [[$class: 'StringParameterValue', name: 'centos_variable', value: "going outside"]]
+
     }
 }
  

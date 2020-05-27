@@ -11,12 +11,11 @@
                           sh 'ls'
                       }
                 }
-                stage("dockerlogin") {
+                stage("displaytimestamp") {
                      steps {
                           echo "TimeStamp: ${currentBuild.startTimeInMillis}"
 
-                         echo "TimeStamp: ${Util.getTimeSpanString(System.currentTimeMillis())}"
-                     }
+                         }
                 }
            }
       }

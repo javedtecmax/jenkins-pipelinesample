@@ -3,6 +3,6 @@ node {
         echo "building new parameter"
     }
     stage('hello world') {
-        sh 'hello world'
+        sh 'echo hello world'
     }
 }

@@ -15,7 +15,14 @@
                      steps {
                           echo "TimeStamp: ${currentBuild.startTimeInMillis}"
 
-                         }
+                     }
                 }
+                 
+                stage("Call parameter job") {
+                     steps {
+                           build job: 'jenkins-parameterized', parameters: [[$class: 'StringParameterValue', name: 'test_var', value: javeed]]
+                     }
+                }
+                 
            }
       }

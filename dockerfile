@@ -1,6 +1,7 @@
 node {
-    stage('parameter') {
-        echo "building new parameter"
+    deleteDir()
+    stage('checkout') {
+        checkout scm
     }
     stage('hello world') {
         sh 'echo hello world'

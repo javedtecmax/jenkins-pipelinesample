@@ -5,7 +5,9 @@ node {
     stage('hello world') {
         sh 'echo hello world'
     }
-    stage('adding parameter') {
+    stage('parallel stage') {
+        parallel {
+            stage('adding parameter') {
                 build job: 'centos-parameter', parameters: [[$class: 'StringParameterValue', name: 'centos_variable', value: "adding all parametrs together"]]
                     }
     stage('parameter1') {
@@ -21,5 +23,7 @@ node {
                 build job: 'centos-parameter4', parameters: [[$class: 'StringParameterValue', name: 'git_variable', value: "hi"]]
 
     }
-}
+        }
+    }
+    }
  

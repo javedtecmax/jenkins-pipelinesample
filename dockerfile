@@ -26,5 +26,8 @@ node {
             }
         )
     }
+    stage('Run ansible playbook') {
+        sh("ansible-playbook -vvv ansible-test-playbook")
+    }
 
 }

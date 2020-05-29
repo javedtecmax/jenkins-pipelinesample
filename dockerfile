@@ -27,7 +27,8 @@ node {
         )
     }
     stage('Run ansible playbook') {
+        sh("ls")
+        sh("pwd")
         sh("ansible-playbook -vvv ansible-test-hello.yml")
-    }
-
+         }
 }

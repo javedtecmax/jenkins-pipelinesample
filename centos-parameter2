@@ -1,0 +1,6 @@
+node {
+    stage('text2') { 
+        echo "docker installing ${docker_variable}"
+    }
+}
+        

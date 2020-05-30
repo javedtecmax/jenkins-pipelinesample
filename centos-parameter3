@@ -1,0 +1,5 @@
+node {
+   stage('text3') { 
+       echo "installing miniqube ${miniqube_variable}"
+   }
+}

@@ -1,0 +1,5 @@
+node {
+   stage('Preparation') { // for display purposes
+      echo "biulding another parameter ${centos_variable}"
+   }
+}

@@ -1,0 +1,5 @@
+node {
+    stage('text1') { 
+        echo "parameter1 is going to installed ${ansible_variable}"
+    }
+}

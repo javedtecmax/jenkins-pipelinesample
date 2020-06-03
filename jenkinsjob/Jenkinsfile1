@@ -32,4 +32,8 @@ node {
         sh("pwd")
         sh("ansible-playbook -vvv playbooks/ansible-test-hello.yml")
          }
+    stage('Run new ansible playbook') {
+        sh("ls")
+        sh("pwd")
+        sh("ansible-playbook -vvv playbooks/ec2.yml")
 }

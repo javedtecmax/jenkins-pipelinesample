@@ -1,0 +1,24 @@
+---
+ - name: creating ec2 server
+   hosts: localhost
+   tasks: 
+    - name: new instance
+      ec2:
+        region: us-east-1
+        key_name: ansible.pem
+        instance_type: t2.micro
+        image: ami-098f16afa9edf40be
+        wait: yes
+        count: 1
+      register: termination
+    - debug:
+        msg: "{{ termination }}"
+    - name: Terminate instances that were previously launched
+      ec2:
+        state: 'absent'
+        region: us-east-1
+        instance_ids: '{{ termination.instance_ids }}'
+    
+    
+        
+        

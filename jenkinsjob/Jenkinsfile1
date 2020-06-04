@@ -7,7 +7,7 @@ node {
         sh 'echo hello world'
     }
 
-    stage('parallel stage') {
+    /**stage('parallel stage') {
         parallel (
            'adding parameter': {
                 build job: 'centos-parameter', parameters: [[$class: 'StringParameterValue', name: 'centos_variable', value: "adding all parametrs together"]]
@@ -26,7 +26,7 @@ node {
 
             }
         )
-    }
+    }**/
     stage('Run ansible playbook') {
         sh("ls")
         sh("pwd")
@@ -36,5 +36,5 @@ node {
         sh("ls")
         sh("pwd")
         sh("ansible-playbook -vvv playbooks/ec2.yml")
-    }
+         }
 }

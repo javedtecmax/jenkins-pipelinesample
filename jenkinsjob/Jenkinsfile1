@@ -1,8 +1,4 @@
 node {
-    environment {
-        AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
-        AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
-    }
     deleteDir()
     stage('checkout') {
         checkout scm
@@ -36,9 +32,14 @@ node {
         sh("pwd")
         sh("ansible-playbook -vvv playbooks/ansible-test-hello.yml")
          }
+
     stage('Run new ansible playbook') {
         sh("ls")
         sh("pwd")
-        sh("ansible-playbook -vvv playbooks/ec2.yml")
-         }
+        withCredentials([string(credentialsId: 'AWS_ACCESS_KEY_ID', variable: 'AWS_ACCESS_KEY_ID'), string(credentialsId: 'AWS_SECRET_ACCESS_KEY', variable: 'AWS_SECRET_ACCESS_KEY')]) {
+            // some block
+            sh("ansible-playbook -vvv playbooks/ec2.yml")
+        }
+        
+    }
 }

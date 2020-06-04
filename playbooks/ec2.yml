@@ -22,7 +22,7 @@
       ec2_instance_info:
         filters:
           availability-zone: "us-east-1e"
-          region: us-east-1
+        region: us-east-1
     
     
         

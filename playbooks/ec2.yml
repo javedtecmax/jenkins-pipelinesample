@@ -21,7 +21,7 @@
     - name: getting information of ec2 instances
       ec2_instance_info:
         filters:
-          availability-zone: us-east-1e
+          availability-zone: "us-east-1e"
     
     
     
